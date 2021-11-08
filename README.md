@@ -14,6 +14,6 @@ npx fetch-artifact --repo timmorey/fetch-artifact --name my-artifact --token <my
 
 | Name | Description | Required |
 | --- | --- | --- |
-| <nobr>`--repo`</nobr> | The combined owner/org and repository name.  For example, `timmorey/fetch-artifact`. | yes |
-| <nobr>`--name`</nobr> | The artifact name | yes |
-| <nobr>`--token`</nobr> | A [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) that has "repo" scope. | yes |
+| `repo` | The combined owner and repository name.  For example, `timmorey/fetch-artifact`. | yes |
+| `name` | The artifact name | yes |
+| `token` | A [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) that has "repo" scope. | yes |
