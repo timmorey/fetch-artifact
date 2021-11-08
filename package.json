@@ -1,0 +1,23 @@
+{
+  "name": "download-github-artifact",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timmorey/download-github-artifact.git"
+  },
+  "author": "Timothy Morey <tmorey@esri.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timmorey/download-github-artifact/issues"
+  },
+  "homepage": "https://github.com/timmorey/download-github-artifact#readme",
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "octokit": "^1.7.0"
+  }
+}
