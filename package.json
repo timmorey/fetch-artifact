@@ -18,6 +18,7 @@
   "homepage": "https://github.com/timmorey/download-github-artifact#readme",
   "dependencies": {
     "minimist": "^1.2.5",
+    "node-stream-zip": "^1.15.0",
     "octokit": "^1.7.0"
   }
 }

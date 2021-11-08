@@ -1,7 +1,8 @@
-const { Octokit } = require('octokit')
+const StreamZip = require('node-stream-zip')
 const fs = require('fs')
 const https = require('https')
 const parseArgs = require('minimist')
+const { Octokit } = require('octokit')
 
 const args = parseArgs(process.argv.slice(2))
 
@@ -44,5 +45,10 @@ async function downloadArtifact(owner, repo, artifact) {
     artifact_id: artifact.id,
     archive_format: 'zip',
   })
-  fs.createWriteStream('out.zip').write(Buffer.from(response.data))
+  fs.writeFileSync('temp.zip', Buffer.from(response.data))
+  // await new Promise(resolve => fs.createWriteStream('temp.zip').write(Buffer.from(response.data), resolve))
+  const zip = new StreamZip.async({ file: 'temp.zip' })
+  await zip.extract(null, './')
+  await zip.close()
+  fs.rmSync('temp.zip')
 }
