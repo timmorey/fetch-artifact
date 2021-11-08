@@ -1,5 +1,5 @@
 {
-  "name": "download-latest-artifact",
+  "name": "fetch-artifact",
   "version": "0.1.0",
   "description": "Downloads the latest version of a named github artifact",
   "main": "index.js",
@@ -9,14 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timmorey/download-latest-artifact.git"
+    "url": "git+https://github.com/timmorey/fetch-artifact.git"
   },
   "author": "Timothy Morey <tmorey@esri.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/timmorey/download-github-artifact/issues"
-  },
-  "homepage": "https://github.com/timmorey/download-github-artifact#readme",
+  "homepage": "https://github.com/timmorey/fetch-artifact#readme",
   "dependencies": {
     "minimist": "^1.2.5",
     "node-stream-zip": "^1.15.0",
