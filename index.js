@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const StreamZip = require('node-stream-zip')
 const fs = require('fs')
 const parseArgs = require('minimist')
