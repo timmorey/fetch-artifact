@@ -21,7 +21,7 @@ getArtifactMetadata(octokit, owner, repo, runId)
 async function getArtifactMetadata(octokit, owner, repo, runId) {
   const per_page = 100
   const endpoint = runId ? `/repos/${owner}/${repo}/actions/runs/${runId}/artifacts` : `/repos/${owner}/${repo}/actions/artifacts`
-  let result = await octokit.request(`GET ${endpoint}`)
+  let result = await octokit.request(`GET ${endpoint}`, { per_page })
   let artifacts = result.data.artifacts
   // TODO: do we need to download all if we want the latest?  It sure looks like they're sorted by id and created_at
   while (artifacts.length < result.data.total_count) {
