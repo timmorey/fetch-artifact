@@ -8,6 +8,7 @@ const { Octokit } = require('octokit')
 const args = parseArgs(process.argv.slice(2))
 
 const [ owner, repo ] = args['repo'].split('/')
+const runId = args['runId']
 const artifactName = args['name']
 const token = args['token']
 
@@ -19,7 +20,8 @@ getArtifactMetadata(octokit, owner, repo)
 
 async function getArtifactMetadata(octokit, owner, repo) {
   const per_page = 100
-  let result = await octokit.request('GET /repos/{owner}/{repo}/actions/artifacts', { owner, repo, per_page })
+  const endpoint = runId ? '/repos/{owner}/{repo}/actions/runs/{runId}/artifacts' : '/repos/{owner}/{repo}/actions/artifacts'
+  let result = await octokit.request('GET {endpoint}', { owner, repo, per_page })
   let artifacts = result.data.artifacts
   // TODO: do we need to download all if we want the latest?  It sure looks like they're sorted by id and created_at
   while (artifacts.length < result.data.total_count) {
